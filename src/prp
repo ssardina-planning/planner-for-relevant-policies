@@ -2,7 +2,10 @@
 
 set -e
 
-BASEDIR="$(dirname "$0")"
+# This is to allow symbolic links to this script, so that the true basedir is found
+REALPATH=$(realpath $0)
+BASEDIR="$(dirname "$REALPATH")"
+echo $BASEDIR
 
 function die {
     echo "$@" 1>&2
