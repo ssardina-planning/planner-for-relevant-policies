@@ -1,0 +1,11 @@
+output
+output.sas
+plan_numbers_and_cost
+sas_plan
+elapsed.time
+__pycache__
+.obj
+src/preprocess/Makefile.depend
+src/preprocess/preprocess
+src/search/downward-release
+src/search/Makefile.depend
