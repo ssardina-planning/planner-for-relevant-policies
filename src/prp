@@ -5,7 +5,7 @@ set -e
 # This is to allow symbolic links to this script, so that the true basedir is found
 REALPATH=$(realpath $0)
 BASEDIR="$(dirname "$REALPATH")"
-echo $BASEDIR
+echo "Base dir for PRP: $BASEDIR"
 
 function die {
     echo "$@" 1>&2
@@ -83,6 +83,7 @@ if [[ -e "$2" ]]; then
     $TIME "$TRANSLATE" "$INV_TIME_LIMIT" "$1" "$2"
     shift 2
 else
+    echo $2
     echo "Second argument is not a file name: auto-detect domain file."
     $TIME "$TRANSLATE" "$INV_TIME_LIMIT" "$1"
     shift
