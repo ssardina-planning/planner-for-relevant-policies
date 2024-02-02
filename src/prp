@@ -22,7 +22,21 @@ PREPROCESS="$BASEDIR/preprocess/preprocess"
 SEARCH="$BASEDIR/search/downward"
 
 # Settings
-INV_TIME_LIMIT="300"
+# Paths to planner components
+TRANSLATE="$BASEDIR/translate/translate.py"
+PREPROCESS="$BASEDIR/preprocess/preprocess"
+SEARCH="$BASEDIR/search/downward"
+
+# Settings
+INV_TIME_LIMIT="0"
+options=':i:'
+while getopts $options option; do
+  case "$option" in
+    i) INV_TIME_LIMIT=$OPTARG;;
+  esac
+done
+shift $((OPTIND-1))
+echo "Using invariant time limit of $INV_TIME_LIMIT s."
 
 # Check for citation request
 if [ "--citation" = "$1" ]; then
