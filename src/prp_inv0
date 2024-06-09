@@ -28,7 +28,7 @@ PREPROCESS="$BASEDIR/preprocess/preprocess"
 SEARCH="$BASEDIR/search/downward"
 
 # Settings
-INV_TIME_LIMIT="300"
+INV_TIME_LIMIT="0"
 options=':i:'
 while getopts $options option; do
   case "$option" in
