@@ -241,4 +241,4 @@ else
 fi
 EXITCODE=$?
 rm -f $TEMPFILE
-exit $EXITCODE
+# exit $EXITCODE
