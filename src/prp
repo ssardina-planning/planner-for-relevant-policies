@@ -69,6 +69,12 @@ if [ "--citation" = "$1" ]; then
   exit 1
 fi
 
+
+if [ -d "output" ]; then
+  die "There is a directory called 'output' that will clash with planner output. Stop execution."
+fi
+
+
 # Need to explicitly ask for GNU time (from MacPorts) on Mac OS X.
 if [[ "$(uname)" == "Darwin" ]]; then
     TIME="gtime"
@@ -114,11 +120,11 @@ echo "$SEARCH" "$IPC" policy-repair < output "$@"
 echo
 
 
-## Read if a solution was found
+## Report policy size if policy was dumped
 POLICY_FILE="$PWD/policy.out"
 if [ -f $POLICY_FILE ]; then
    SIZE=$(grep -o "If" policy.out | wc -l)
    echo "Policy size: $SIZE"
 else
-   echo "File $POLICY_FILE does not exist."
+   echo "File $POLICY_FILE does not exist. Cannot report policy size."
 fi
