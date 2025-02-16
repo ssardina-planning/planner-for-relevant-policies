@@ -9,3 +9,4 @@ src/preprocess/Makefile.depend
 src/preprocess/preprocess
 src/search/downward-release
 src/search/Makefile.depend
+downward.tmp.*
